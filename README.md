@@ -76,3 +76,53 @@ Projekt integruje się z urządzeniami typu **ESP32/ESP8266** lub dowolnym innym
 git clone https://github.com/twoje_repo/smart-home-system.git
 cd smart-home-system
 ```
+
+### 2. 🐍 Tworzenie i aktywacja środowiska wirtualnego
+```bash
+python -m venv venv
+source venv/bin/activate        # Linux/macOS
+venv\Scripts\activate           # Windows
+```
+
+### 3. 📦 Instalacja zależności
+```bash
+pip install -r requirements.txt
+```
+
+### 4. 🛠️ Wykonanie migracji bazy danych
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 5. 👤 Utworzenie konta administratora
+```bash
+python manage.py createsuperuser
+```
+
+### 6. 🚀 Uruchomienie serwera developerskiego
+```bash
+python manage.py runserver
+```
+Aplikacja będzie dostępna pod adresem:
+http://127.0.0.1:8000
+
+
+## 📚 Dodatkowe informacje
+
+Panel administratora: http://127.0.0.1:8000/admin
+Domyślna lokalizacja konfiguracji MQTT: settings.py lub panel ustawień
+Dokumentacja Django: https://docs.djangoproject.com/pl/
+
+
+## ✅ Pomysły na rozszerzenia
+- Powiadomienia push (np. WebSocket + Firebase)
+- Aplikacja mobilna (React Native / Flutter)
+- Integracja z Google Assistant / Alexa
+- Obsługa Zigbee/Z-Wave
+- System alarmowy i kamery
+
+
+
+
+
