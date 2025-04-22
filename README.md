@@ -49,6 +49,74 @@ Projekt integruje się z urządzeniami typu **ESP32/ESP8266** lub dowolnym innym
 
 ---
 
+## 🗺️ Roadmapa i struktura aplikacji 
+
+Aplikacja będzie składać się z czterech głównych ekranów widocznych po zalogowaniu się użytkownika. Każdy z nich realizuje konkretne funkcje związane z zarządzaniem inteligentnym domem.
+
+### 🖥️ 1. Dashboard (Strona główna)
+Cel: Centralny punkt zarządzania – szybki podgląd stanu systemu, aktywności i skróty do najważniejszych funkcji.
+
+Zawartość:
+
+🔸 Widżety z aktualnymi danymi z czujników (np. temperatura, ruch, światło, wilgotność).
+
+🔸 Skróty do najczęściej używanych urządzeń (np. światło w salonie – przycisk WŁ/WYŁ).
+
+🔸 Ostatnie zdarzenia (np. „Światło w kuchni wyłączone przez użytkownika Anna, 12:43”).
+
+🔸 Powiadomienia systemowe (np. „Temperatura poniżej progu: 17°C”).
+
+## 💡 2. Urządzenia (Devices)
+Cel: Zarządzanie wszystkimi urządzeniami IoT przypisanymi do danego użytkownika.
+
+Zawartość:
+
+🔸 Lista urządzeń w formie tabeli lub kafelków (nazwa, typ, status, pokój, ostatnia aktywność).
+
+🔸 Możliwość dodania nowego urządzenia z formularzem:
+
+Nazwa, opis
+
+Typ (czujnik / aktuator)
+
+Pokój (salon, kuchnia…)
+
+Temat MQTT (np. home/livingroom/light1)
+
+🔸 Edycja i usuwanie istniejących urządzeń.
+
+🔸 Ikony / kolory reprezentujące status (zielony: online, szary: offline).
+
+## 📈 3. Historia i statystyki
+Cel: Analiza i archiwizacja danych z urządzeń – zarówno logi zdarzeń, jak i pomiary z czujników.
+
+Zawartość:
+
+🔸 Filtrowalne logi użytkowników i urządzeń:
+
+Co, kiedy, przez kogo
+
+Eksport do CSV
+
+🔸 Interaktywne wykresy danych pomiarowych:
+
+Temperatura, wilgotność, ruch
+
+Wybór przedziału czasu, urządzenia
+
+🔸 Wskaźniki dzienne/tygodniowe/miesięczne aktywności.
+
+## ⚙️ 4. Automatyzacja i ustawienia
+Cel: Konfiguracja działania systemu – reguły automatyzacji, MQTT oraz ustawienia konta.
+
+Zawartość:
+
+🧠 Reguły automatyzacji
+🔧 Ustawienia systemu
+👤 Ustawienia konta:
+
+---
+
 ## 🛠️ Technologie
 
 - **Backend:** Python 3.10, Django 4.x
@@ -107,6 +175,7 @@ python manage.py runserver
 Aplikacja będzie dostępna pod adresem:
 http://127.0.0.1:8000
 
+---
 
 ## 📚 Dodatkowe informacje
 
@@ -114,6 +183,7 @@ Panel administratora: http://127.0.0.1:8000/admin
 Domyślna lokalizacja konfiguracji MQTT: settings.py lub panel ustawień
 Dokumentacja Django: https://docs.djangoproject.com/pl/
 
+---
 
 ## ✅ Pomysły na rozszerzenia
 - Powiadomienia push (np. WebSocket + Firebase)
